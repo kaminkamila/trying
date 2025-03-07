@@ -210,11 +210,12 @@ map.on('load', () => {
             const lat = event.lngLat.lat
             document.getElementById('lat').innerHTML = `Широта: ${lat}`
           })
-          
+
           regionsGeoJSON.features.map((f) => {
             document.getElementById("list-all").innerHTML += `<div class="list-item"> 
             <h4>${f.properties["Наименование субъекта Российской Федерации"]}</h4>
             <a href='#' onclick="map.flyTo({center: [${f.geometry.coordinates}], zoom: 10})">Найти на карте</a>
+            <audio controls src="./Audio/Нижегородская область.mp3"></audio>
             </div><hr>`;
           });
         });
